@@ -2,6 +2,12 @@
 
 Zachary Thomas hashing table project using the marvel database for Ira Woodring's CIS 263 class.
 
+Hashing function 1 collisions: 12051 
+
+Hashing function 2 collisions: 16341 
+
+Hashing function 3 collisions: 5852
+
 ### Hashing
 
 We went over hash maps and hashing this past week.  C++ (most languages actually) provides maps in its standard library so there is little reason to ever create our own.  However, the ability to understand how they work and are written is important.
