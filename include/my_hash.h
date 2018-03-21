@@ -15,30 +15,48 @@ class My_hash{
 public:
 
   My_hash(){
-    hashTable.resize(TABLESIZE);
-		for(int i = 0; i < TABLESIZE; i++){
-			hashTable[i].reserve(sizeof(Superhero));
-		}
+    hashTable.reserve(TABLESIZE);
+		//for(int i = 0; i < TABLESIZE; i++){
+		//	hashTable[i].reserve(sizeof(Superhero));
+		//}
   }
 
   bool insert(const Superhero & s){
     bool inserted = false;
     int key = s.getPageId();
     std::string name = s.getName();
-    //4219480
-    int index = (name[0] * 3 + name[1]) % TABLESIZE;
+    //16376
+    int index = hash1(name, key);
 
-    std::cout << index << std::endl;
+    //std::cout << index << std::endl;
 
     int superHere = hashTable[index].size();
 
-    if(superHere < 0){
+    std::cout << superHere << std::endl;
+
+    if(superHere == 0){
       inserted = true;
       hashTable[index].push_back(s);
     } else {
       hashTable[index].push_back(s);
     }
     return inserted;
+  }
+
+  // 13759 collisions
+  int hash1(std::string name, int key){
+    return (name[0] * 99 + name[1] * 3 + name[3] * 5 +
+    name[4] * 7) % TABLESIZE;
+  }
+
+  int hash2(std::string name, int key){
+    for(int i = 0; i<4; i++){
+      
+    }
+  }
+
+  int hash3(std::string name, int key){
+
   }
 
   Superhero & get(const std::string name){

@@ -37,7 +37,7 @@ int main(int argc, char const *argv[]) {
 
   Superhero s;
 
-  int coll;
+  int coll = 0;
 
   in.read_header(io::ignore_extra_column, "page_id", "name", "urlslug", "ID",
   "ALIGN", "EYE", "HAIR", "SEX", "GSM", "ALIVE", "APPEARANCES",
