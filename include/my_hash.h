@@ -16,23 +16,22 @@ public:
 
   My_hash(){
     hashTable.reserve(TABLESIZE);
-		//for(int i = 0; i < TABLESIZE; i++){
-		//	hashTable[i].reserve(sizeof(Superhero));
-		//}
   }
 
   bool insert(const Superhero & s){
+    int index;
     bool inserted = false;
-    int key = s.getPageId();
     std::string name = s.getName();
-    //16376
-    int index = hash1(name, key);
 
-    //std::cout << index << std::endl;
+    if(hashFunction == 1){
+      index = hash1(name);
+    } else if (hashFunction == 2){
+      index = hash2(name);
+    } else if (hashFunction == 3){
+      index = hash3(name);
+    }
 
     int superHere = hashTable[index].size();
-
-    std::cout << superHere << std::endl;
 
     if(superHere == 0){
       inserted = true;
@@ -43,29 +42,71 @@ public:
     return inserted;
   }
 
-  // 13759 collisions
-  int hash1(std::string name, int key){
-    return (name[0] * 99 + name[1] * 3 + name[3] * 5 +
+  /***************************************************
+  *
+  // 12051 collisions. Made to take first four letters
+  of the superhero name and times each letter by an odd
+  number. Hashing function idea from hashing_functions.h
+  under class notes.
+
+
+  */
+  int hash1(std::string name){
+    return (name[0] * 99 + name[1] * 199 + name[3] * 5 +
     name[4] * 7) % TABLESIZE;
   }
+/*
+  Hashing function from hashing_functions.h
+  under class notes.
+*/
+  int hash2(std::string name){
+    int hashVal = 0;
 
-  int hash2(std::string name, int key){
-    for(int i = 0; i<4; i++){
-      
+    for(char ch:name){
+      hashVal += ch;
+
+    return hashVal % TABLESIZE;
+  }
+}
+
+
+  /*
+    Hashing function from hashing_functions.h
+    under class notes.
+  */
+  unsigned int hash3(std::string name){
+    unsigned int hashVal = 99;
+    for( char ch:name ){
+      hashVal = 37 * hashVal + ch;
     }
+
+    return hashVal % TABLESIZE;
+
   }
 
-  int hash3(std::string name, int key){
-
-  }
-
+  // help from
   Superhero & get(const std::string name){
+    int index;
+    if(hashFunction == 1){
+      index = hash1(name);
+    } else if (hashFunction == 2){
+      index = hash2(name);
+    } else if (hashFunction == 3){
+      index = hash3(name);
+    }
 
+    // Return first index of vectors
+    return hashTable[index][0];
+  }
 
+  void setHashFunction(int a){
+    hashFunction = a;
   }
 
 private:
-  std::vector<std::vector<Superhero>> hashTable;
+  std::vector<std::vector<Superhero> > hashTable;
+
+  int hashFunction = 0;
 
   const int TABLESIZE = 17011;
 

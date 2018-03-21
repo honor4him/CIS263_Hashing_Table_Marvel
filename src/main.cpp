@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include "csv.h"
 #include "my_hash.h"
 
@@ -25,7 +26,6 @@ int main(int argc, char const *argv[]) {
   std::string hair_color;
   std::string sex;
   std::string gsm;
-  //bool alive;
   char aliveChar;
   bool aliveBool;
   std::string alive;
@@ -33,11 +33,20 @@ int main(int argc, char const *argv[]) {
   std::string first_appearance;
   int year;
 
-  My_hash hashTable;
+  My_hash hashTable1;
+  hashTable1.setHashFunction(1);
+
+   My_hash hashTable2;
+   hashTable2.setHashFunction(2);
+
+   My_hash hashTable3;
+   hashTable3.setHashFunction(3);
 
   Superhero s;
 
-  int coll = 0;
+  int coll1 = 0;
+  int coll2 = 0;
+  int coll3 = 0;
 
   in.read_header(io::ignore_extra_column, "page_id", "name", "urlslug", "ID",
   "ALIGN", "EYE", "HAIR", "SEX", "GSM", "ALIVE", "APPEARANCES",
@@ -57,8 +66,6 @@ int main(int argc, char const *argv[]) {
       else
         aliveBool = false;
 
-      //std::cout << name << std::endl;
-
       s.setPageId(page_id);
       s.setName(name);
       s.setUrlslug(urlslug);
@@ -73,12 +80,26 @@ int main(int argc, char const *argv[]) {
       s.setFirstAppearance(first_appearance);
       s.setYear(year);
 
-      if(hashTable.insert(s) == false)
-        coll++;
+      if(hashTable1.insert(s) == false)
+        coll1++;
+
+       if(hashTable2.insert(s) == false)
+         coll2++;
+
+       if(hashTable3.insert(s) == false)
+         coll3++;
 
   }
 
-  std::cout << coll << std::endl;
+  std::ofstream output("RESULTS.md");
+
+  output << "Hashing function 1 collisions: " << coll1 << std::endl;
+  output << "Hashing function 2 collisions: " << coll2 << std::endl;
+  output << "Hashing function 3 collisions: " << coll3 << std::endl;
+
+  output.close();
+
+  std::cout << coll1 << std::endl;
 
 
   return 0;
