@@ -5,6 +5,17 @@
 #include "csv.h"
 #include "my_hash.h"
 
+/***************************************************************
+ * This program takes a marvelData.csv database and converts
+ * it to a hash table with 3 different hashing functions.
+ * The end collisions are then printed to a file. Uses a CSV
+ * parse library by user ben-strasser on github.
+ * https://github.com/ben-strasser/fast-cpp-csv-parser
+ *
+ * @author Zachary Thomas
+ * @version 1.0
+ **************************************************************/
+
 int main(int argc, char const *argv[]) {
 
   unsigned const colCount = 13;
@@ -83,11 +94,11 @@ int main(int argc, char const *argv[]) {
       if(hashTable1.insert(s) == false)
         coll1++;
 
-       if(hashTable2.insert(s) == false)
-         coll2++;
+      if(hashTable2.insert(s) == false)
+        coll2++;
 
-       if(hashTable3.insert(s) == false)
-         coll3++;
+      if(hashTable3.insert(s) == false)
+        coll3++;
 
   }
 
@@ -98,9 +109,5 @@ int main(int argc, char const *argv[]) {
   output << "Hashing function 3 collisions: " << coll3 << std::endl;
 
   output.close();
-
-  std::cout << coll1 << std::endl;
-
-
   return 0;
 }

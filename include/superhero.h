@@ -3,16 +3,17 @@
 
 #include <string>
 
+/***************************************************************
+ * This class holds a line from marvelData.csv file.
+ *
+ * @author Zachary Thomas
+ * @version 1.0
+ **************************************************************/
 class Superhero{
 
 public:
 
   Superhero();
-
-  Superhero(int page_id, std::string name, std::string urlslug, std::string id,
-    std::string alignment, char eye_color, char hair_color, char sex,
-    std::string gsm, bool alive, int appearances,
-    std::string first_appearance, int year);
 
     std::string getName() const;
     int getPageId() const;

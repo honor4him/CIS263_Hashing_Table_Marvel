@@ -6,9 +6,15 @@
 #include <iostream>
 #include "superhero.h"
 
-// Table size 17011
-
-//template<typename superH>
+/***************************************************************
+ * This header file is the backbone to the program. It contains
+ * the hash table with a prime number size of 17011. The hash
+ * functions to insert into the table are mainly ideas from
+ * class or copied directly from notes.
+ *
+ * @author Zachary Thomas
+ * @version 1.0
+ **************************************************************/
 
 class My_hash{
 
