@@ -20,6 +20,9 @@ class My_hash{
 
 public:
 
+  /***************************************************************
+   * Constructor uses table size of 17011
+   **************************************************************/
   My_hash(){
     hashTable.reserve(TABLESIZE);
   }
@@ -70,9 +73,9 @@ public:
 
     for(char ch:name){
       hashVal += ch;
-
+    }
     return hashVal % TABLESIZE;
-  }
+
 }
 
 

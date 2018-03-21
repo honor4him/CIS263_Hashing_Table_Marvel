@@ -9,10 +9,19 @@
  **************************************************************/
 Superhero::Superhero(){}
 
+/***************************************************************
+ * Accessor function for name.
+ * @return name for superhero
+ **************************************************************/
 std::string Superhero::getName() const {
   return name;
 }
 
+
+/***************************************************************
+ * Accessor function for page_id.
+ * @return page_id for superhero
+ **************************************************************/
 int Superhero::getPageId() const {
   return page_id;
 }
