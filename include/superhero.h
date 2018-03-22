@@ -38,85 +38,85 @@ public:
     void setPageId(int a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for name.
+     * @param a name for superhero
      * @return none
      **************************************************************/
     void setName(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for urlslug.
+     * @param a urlslug for superhero
      * @return none
      **************************************************************/
     void setUrlslug(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for id.
+     * @param a id for superhero
      * @return none
      **************************************************************/
     void setId(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for alignment.
+     * @param a alignment for superhero
      * @return none
      **************************************************************/
     void setAlignment(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for eye_color.
+     * @param a eye_color for superhero
      * @return none
      **************************************************************/
     void setEyeColor(char a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for hair_color.
+     * @param a hair_color for superhero
      * @return none
      **************************************************************/
     void setHairColor(char a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for sex.
+     * @param a sex for superhero
      * @return none
      **************************************************************/
     void setSex(char a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for gsm.
+     * @param  a gsm for superhero
      * @return none
      **************************************************************/
     void setGsm(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for alive.
+     * @param a alive boolean for superhero
      * @return none
      **************************************************************/
     void setAlive(bool a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for appearances.
+     * @param a appearances for superhero
      * @return none
      **************************************************************/
     void setAppearances(int a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for first_appearance.
+     * @param a first_appearance for superhero
      * @return none
      **************************************************************/
     void setFirstAppearance(std::string a);
 
     /***************************************************************
-     * Mutator function for page_id.
-     * @param page_id for superhero
+     * Mutator function for year.
+     * @param a year for superhero
      * @return none
      **************************************************************/
     void setYear(int a);
@@ -126,40 +126,40 @@ private:
   /** Holds page_id*/
   int page_id;
 
-  /** Holds page_id*/
+  /** Holds name*/
   std::string name;
 
-  /** Holds page_id*/
+  /** Holds urlslug*/
   std::string urlslug;
 
-  /** Holds page_id*/
+  /** Holds id*/
   std::string id;
 
-  /** Holds page_id*/
+  /** Holds alignment*/
   std::string alignment;
 
-  /** Holds page_id*/
+  /** Holds eye_color*/
   char eye_color;
 
-  /** Holds page_id*/
+  /** Holds hair_color*/
   char hair_color;
 
-  /** Holds page_id*/
+  /** Holds sex*/
   char sex;
 
-  /** Holds page_id*/
+  /** Holds gsm*/
   std::string gsm;
 
-  /** Holds page_id*/
+  /** Holds alive boolean*/
   bool alive;
 
-  /** Holds page_id*/
+  /** Holds appearances*/
   int appearances;
 
-  /** Holds page_id*/
+  /** Holds first_appearance*/
   std::string first_appearance;
 
-  /** Holds page_id*/
+  /** Holds year*/
   int year;
 };
 

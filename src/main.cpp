@@ -29,82 +29,82 @@ int main(int argc, char const *argv[]) {
   /** Holds page_id*/
   int page_id;
 
-  /** Holds page_id*/
+  /** Holds name*/
   std::string name;
 
-  /** Holds page_id*/
+  /** Holds urlslug*/
   std::string urlslug;
 
-  /** Holds page_id*/
+  /** Holds id*/
   std::string id;
 
-  /** Holds page_id*/
+  /** Holds alignment*/
   std::string alignment;
 
-  /** Holds page_id*/
+  /** Holds eye_colorChar*/
   char eye_colorChar;
 
-  /** Holds page_id*/
+  /** Holds hair_colorChar*/
   char hair_colorChar;
 
-  /** Holds page_id*/
+  /** Holds sexChar*/
   char sexChar;
 
-  /** Holds page_id*/
+  /** Holds eye_color*/
   std::string eye_color;
 
-  /** Holds page_id*/
+  /** Holds hair_color*/
   std::string hair_color;
 
-  /** Holds page_id*/
+  /** Holds sex*/
   std::string sex;
 
-  /** Holds page_id*/
+  /** Holds gsm*/
   std::string gsm;
 
-  /** Holds page_id*/
+  /** Holds aliveChar*/
   char aliveChar;
 
-  /** Holds page_id*/
+  /** Holds aliveBool*/
   bool aliveBool;
 
-  /** Holds page_id*/
+  /** Holds alive*/
   std::string alive;
 
-  /** Holds page_id*/
+  /** Holds appearances*/
   int appearances;
 
-  /** Holds page_id*/
+  /** Holds first_appearance*/
   std::string first_appearance;
 
-  /** Holds page_id*/
+  /** Holds year*/
   int year;
 
-  /** Holds page_id*/
+  /** Holds hashTable1*/
   My_hash hashTable1;
   // Uses function 1
   hashTable1.setHashFunction(1);
 
-  /** Holds page_id*/
+  /** Holds hashTable2*/
   My_hash hashTable2;
   // Uses funciton 2
   hashTable2.setHashFunction(2);
 
-  /** Holds page_id*/
+  /** Holds hashTable3*/
   My_hash hashTable3;
   // Uses function 3
   hashTable3.setHashFunction(3);
 
-  /** Holds page_id*/
+  /** Holds s Superhero*/
   Superhero s;
 
-  /** Holds page_id*/
+  /** Holds collisions 1*/
   int coll1 = 0;
 
-  /** Holds page_id*/
+  /** Holds collisions 2*/
   int coll2 = 0;
 
-  /** Holds page_id*/
+  /** Holds collisions 2*/
   int coll3 = 0;
 
   // Read in collumns
@@ -145,6 +145,9 @@ int main(int argc, char const *argv[]) {
       s.setYear(year);
 
       // Start inserting using respective hash functions
+      // Collision goes up if there is something
+      // in the index of the respective hash function
+      // used.
       if(hashTable1.insert(s) == false)
         coll1++;
 
